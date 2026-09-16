@@ -1,0 +1,40 @@
+class Rental {
+    String customerName;
+    int days;
+
+    Rental(String customerName, int days) {
+        this.customerName = customerName;
+        this.days = days;
+    }
+
+    void display() {
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Rental Days: " + days);
+    }
+}
+
+class LuxuryRental extends Rental {
+    boolean chauffeurIncluded;
+
+    LuxuryRental(String customerName, int days, boolean chauffeurIncluded) {
+        super(customerName, days);
+        this.chauffeurIncluded = chauffeurIncluded;
+    }
+
+    @Override
+    void display() {
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Rental Days: " + days);
+        System.out.println("Chauffeur Included: " + chauffeurIncluded);
+    }
+}
+
+public class Car {
+    public static void main(String[] args) {
+
+        LuxuryRental rental =
+            new LuxuryRental("Pavithra", 5, true);
+
+        rental.display();
+    }
+}
